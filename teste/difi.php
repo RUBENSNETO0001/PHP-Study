@@ -59,4 +59,15 @@ else if(10> 4){
         echo"entrou no else <br>";
     } 
 
+    $cor_favorita ="azul";
+
+    switch($cor_favorita){
+         case"azul";
+         echo"sua cor favorita e azul";
+         break;
+         default:
+         echo"basicamente e o mesmo que else";
+         break;
+    }
+   
 ?>

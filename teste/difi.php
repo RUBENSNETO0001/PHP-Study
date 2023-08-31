@@ -35,6 +35,28 @@ if(10 > 2){
 echo"<br>";
 echo"exemplo 2?<br>";
 
+//exemplo2
+if(10 > 2){
+    echo"entrou no primeiro if<br>";
+    if(2 > 300){
+        echo"entrou no segundo if<br>";
+    }
+    else{
+        echo"entrou no else do 2 if, por isso o segundo if não e verdadeiro <br>";
+    } 
+}
 
+//exemplo3
+if(10 > 20){
+    echo"entrou no primeiro if<br>";
+    
+}
+else if(10> 4){
+        echo"entrou no elseif<br>";
+    }
+
+    else{
+        echo"entrou no else <br>";
+    } 
 
 ?>

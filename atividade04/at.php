@@ -6,7 +6,7 @@
 
 $numerosecreto = rand(0, 20);
 $variavel = $numerosecreto;
-$pessoa =10;
+$pessoa = 10;
 
 
 

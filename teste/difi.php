@@ -22,4 +22,19 @@ verificar se e float: is_float(valor)
 verificar se e string: is_string(valor)
 verificar se e uma array: is_array(valor)
 verificar se e numero: is_numeric(valor)
+
+*/
+
+if(10 > 2){
+    echo"entrou no primeiro if<br>";
+    if(2 == 2){
+        echo"entrou no segundo if<br>";
+    }
+}
+
+echo"<br>";
+echo"exemplo 2?<br>";
+
+
+
 ?>

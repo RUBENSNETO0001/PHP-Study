@@ -2,7 +2,7 @@
 
 $array = [];
 
-array_push($array,' ps5 ', 'xbox one ', 'computador ', ' celular');
+$array = [];
  echo count($array);
 $array [0]= "dds";
 

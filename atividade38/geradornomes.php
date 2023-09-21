@@ -1,7 +1,10 @@
 <?php
+
+
 $quantidade = 1;
 
 if($quantidade > 0){
+  
 $nomealeatorio = [];
 $ramdom =['antonio', 'fabio giga','lady gaga', 'samuel do churas', 'ricardão', 'ruren',];
 
@@ -15,5 +18,6 @@ $ramdom =['antonio', 'fabio giga','lady gaga', 'samuel do churas', 'ricardão', 
 }
 
 }
+
 
 ?>

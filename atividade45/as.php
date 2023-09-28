@@ -1,5 +1,10 @@
 <?php 
 
-echo $nome;
+// INICIA
+session_start();
+
+$usuario = $_SESSION['nome'];
+
+echo $usuario;
 
 ?>

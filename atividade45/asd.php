@@ -1,18 +1,11 @@
 <?php
 
-$usuario = 'gustavo';
-
+// INICIA A SESSÃO
 session_start();
 
-if (isset($_SESSION['usuario'])) {
 
-
-    echo "Usuário logado com sucesso! <br>";
-        
-    
-    $usuario = $_SESSION['usuario'];
-    echo "Olá, $usuario bem vindo ao sistema! <br>";
-
-} 
+// CRIA A SESSÃO
+$_SESSION['nome'] = 'Rubens';
 
 ?>
+

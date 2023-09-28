@@ -109,3 +109,57 @@ if(isset($_POST['nome'], $_POST['senha'])) {
     
 </body>
 </html>
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+<?php
+
+// Iniciamos uma sessão na nossa página!
+session_start();
+
+// Verificamos se o formulário foi enviado (quando o usuário clica em "Enviar")
+if (isset($_POST['usuario'], $_POST['senha'])) {
+
+    // Capturamos o nome de usuário e senha enviados pelo formulário
+    $usuario = $_POST['usuario'];
+    $senha = $_POST['senha'];
+
+    // Verificamos se as credenciais são válidas (usuário "usuario" e senha "senha")
+    if ($usuario == 'usuario' && $senha == 'senha') {
+        // Credenciais válidas, criamos uma sessão para o usuário
+        $_SESSION['usuario'] = $usuario;
+
+        // Redirecionamos o usuário para uma página com acesso restrito
+        header('location: acesso_restrito.php');
+
+        // Encerramos o código aqui para evitar que o restante da página seja executado
+        exit();
+    } else {
+        // Credenciais inválidas, exibimos uma mensagem de erro
+        echo "Credenciais inválidas";
+    }
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="POST">
+        <!-- Campos de entrada para o nome de usuário e senha -->
+        <input type="text" name="usuario" placeholder="nome">
+        <input type="text" name="senha" placeholder="senha">
+
+        <!-- Botão para enviar o formulário -->
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+
+</html>

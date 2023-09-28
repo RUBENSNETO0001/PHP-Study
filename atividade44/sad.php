@@ -163,3 +163,84 @@ if (isset($_POST['usuario'], $_POST['senha'])) {
 </body>
 
 </html>
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<?php
+// Inicie a sessão (certifique-se de fazer isso no início do seu script PHP)
+session_start();
+
+if (isset($_SESSION['usuario'])) {
+
+    // A session do usuário existe, então o usuário está logado
+    echo "Usuário logado com sucesso! <br>";
+        
+    // Captura o nome de usuário da session
+    $usuario = $_SESSION['usuario'];
+    echo "Olá, $usuario bem vindo ao sistema! <br>";
+
+} 
+else {
+
+    // Caso não esteja logado, o usuário não vai poder acessar essa página
+    echo "VOCE NÃO PODE ACESSAR POIS NÃO ESTÁ LOGADO!";
+    
+    // Dá um exit no código pra não mostrar mais nada!
+    exit;
+}
+?>
+
+<!-- Adiciona um link para a página "deslogar.php" que permitirá ao usuário deslogar -->
+<a href="deslogar.php">Deslogar do sistema!</a>
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<?php
+
+// Iniciamos uma sessão na nossa página!
+session_start();
+
+// Verificamos se o formulário foi enviado (quando o usuário clica em "Enviar")
+if (isset($_POST['usuario'], $_POST['senha'])) {
+
+    // Capturamos o nome de usuário e senha enviados pelo formulário
+    $usuario = $_POST['usuario'];
+    $senha = $_POST['senha'];
+
+    // Verificamos se as credenciais são válidas (usuário "usuario" e senha "senha")
+    if ($usuario == 'usuario' && $senha == 'senha') {
+        // Credenciais válidas, criamos uma sessão para o usuário
+        $_SESSION['usuario'] = $usuario;
+
+        // Redirecionamos o usuário para uma página com acesso restrito
+        header('location: acesso_restrito.php');
+
+        // Encerramos o código aqui para evitar que o restante da página seja executado
+        exit();
+    } else {
+        // Credenciais inválidas, exibimos uma mensagem de erro
+        echo "Credenciais inválidas";
+    }
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="POST">
+        <!-- Campos de entrada para o nome de usuário e senha -->
+        <input type="text" name="usuario" placeholder="nome">
+        <input type="text" name="senha" placeholder="senha">
+
+        <!-- Botão para enviar o formulário -->
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+
+</html>

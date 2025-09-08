@@ -1,0 +1,12 @@
+* {
+    background-color: rgb(115, 211, 255);
+    margin: 0;
+}
+body{
+    height: 100dvh;
+}
+#form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
